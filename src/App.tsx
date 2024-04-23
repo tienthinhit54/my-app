@@ -8,6 +8,8 @@ import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
+import { LoggedIn } from './components/state/LoggedIn';
+import { User } from './components/state/User';
 
 function App() {
   const personName ={
@@ -30,6 +32,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <Greet name='Tiến Thịnh' isLoggedin={false}/>
       <Person name = { personName}/>
       <PersonList names ={nameList}/>
       <Status status='loading'/>
@@ -37,12 +40,14 @@ function App() {
       <Oscar>
         <Heading> adasd </Heading>
       </Oscar>
-      <Greet name='Tiến Thịnh' isLoggedin={false}/>
+      
       <Button handleClick={(event, id)=>{
         console.log('Button clicked', event,id)
       }}/>
       <Input value='' handleChange={event =>console.log(event)}/>
       <Container style={{border:'1px solit black', padding:'1rem'}}/>
+      <LoggedIn/>
+      <User/>
     </div>
   );
 }
