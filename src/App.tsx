@@ -8,6 +8,7 @@ import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
+import { Counter } from './components/state/Counter';
 import { LoggedIn } from './components/state/LoggedIn';
 import { User } from './components/state/User';
 
@@ -46,8 +47,8 @@ function App() {
       }}/>
       <Input value='' handleChange={event =>console.log(event)}/>
       <Container style={{border:'1px solit black', padding:'1rem'}}/>
-      <LoggedIn/>
       <User/>
+      <Counter/>
     </div>
   );
 }
