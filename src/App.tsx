@@ -10,7 +10,12 @@ import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
 import { Counter } from './components/state/Counter';
 import { LoggedIn } from './components/state/LoggedIn';
-import { User } from './components/state/User';
+import { ThemeContextProvider } from './components/context/ThemeContext';
+import { Box } from './components/context/Box';
+import { UserContextProvider } from './components/context/UserContext';
+import { User } from './components/context/User';
+import { MutableRef } from './components/ref/MutableRef';
+import { DomRef } from './components/ref/DomRef';
 
 function App() {
   const personName ={
@@ -47,8 +52,13 @@ function App() {
       }}/>
       <Input value='' handleChange={event =>console.log(event)}/>
       <Container style={{border:'1px solit black', padding:'1rem'}}/>
-      <User/>
       <Counter/>
+      <ThemeContextProvider>
+        <Box/>
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <User/>
+      </UserContextProvider>
     </div>
   );
 }
